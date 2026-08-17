@@ -12,7 +12,7 @@ const skills = {
     "REST APIs",
     "Microservices",
   ],
-  Frontend: ["React.js", "HTML5", "CSS3", "Tailwind CSS"],
+  Frontend: ["React.js", "HTML5", "CSS3", "Tailwind CSS","JS"],
   Tools: ["Git", "GitHub", "Maven", "Gradle", "Postman", "IntelliJ IDEA"],
   Methodologies: ["Agile", "Scrum"],
   "Currently Learning": ["Docker", "Kafka", "Redis", "OpenAI APIs"],
@@ -68,18 +68,51 @@ const projects = [
 ];
 
 const codingProfiles = [
-  { name: "LeetCode", count: "300+", text: "DSA & interview problems", url:"www.example.com" },
-  { name: "GeeksforGeeks", count: "200+", text: "Algorithms & problem solving" ,url:"www.example.com"},
-  { name: "HackerRank", count: "150+", text: "Problem solving & DSA" ,url:"www.example.com"},
-  { name: "NeetCode", count: "Curated", text: "Interview preparation patterns",url:"www.example.com" },
+  {
+    name: "LeetCode",
+    count: "300+",
+    text: "DSA & interview problems",
+    url: "https://leetcode.com/",
+  },
+  {
+    name: "GeeksforGeeks",
+    count: "200+",
+    text: "Algorithms & problem solving",
+    url: "https://www.geeksforgeeks.org/",
+  },
+  {
+    name: "HackerRank",
+    count: "150+",
+    text: "Problem solving & DSA",
+    url: "https://www.hackerrank.com/",
+  },
+  {
+    name: "NeetCode",
+    count: "Curated",
+    text: "Interview preparation patterns",
+    url: "https://neetcode.io/",
+  },
+];
+
+const experienceTech = [
+  "Java",
+  "Spring Boot",
+  "Spring Security",
+  "JPA",
+  "Hibernate",
+  "MySQL",
+  "JUnit",
+  "Mockito",
+  "Git",
+  "Maven",
 ];
 
 function App() {
   return (
     <div className="app">
-      {/* Navigation */}
+      {/* NAVIGATION */}
       <nav className="navbar">
-        <a href="#home" className="logo">
+        <a href="#home" className="logo" aria-label="Akshay Kumar Prajapati home">
           AK<span>.</span>
         </a>
 
@@ -99,11 +132,11 @@ function App() {
         </a>
       </nav>
 
-      {/* Hero */}
+      {/* HERO */}
       <section id="home" className="hero section">
         <div className="hero-content">
           <div className="availability">
-            <span className="status-dot"></span>
+            <span className="status-dot" />
             Available for opportunities
           </div>
 
@@ -135,17 +168,19 @@ function App() {
             <a
               href="https://github.com/AkshayKPrajapati"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               GitHub ↗
             </a>
+
             <a
               href="https://www.linkedin.com/in/akshayprajapati2552/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               LinkedIn ↗
             </a>
+
             <a href="mailto:akshay.prajapati2552@gmail.com">
               Email ↗
             </a>
@@ -156,10 +191,11 @@ function App() {
           <div className="code-window">
             <div className="window-header">
               <div className="window-dots">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span />
+                <span />
+                <span />
               </div>
+
               <span>developer.java</span>
             </div>
 
@@ -167,8 +203,7 @@ function App() {
               <div>
                 <span className="line-number">01</span>
                 <span className="purple">public class</span>{" "}
-                <span className="blue">Developer</span>{" "}
-                {"{"}
+                <span className="blue">Developer</span> {"{"}
               </div>
 
               <div>
@@ -208,27 +243,30 @@ function App() {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* STATS */}
       <section className="stats">
         <div>
           <strong>35+</strong>
           <span>REST APIs</span>
         </div>
+
         <div>
           <strong>1000+</strong>
           <span>Daily Requests</span>
         </div>
+
         <div>
           <strong>80%+</strong>
           <span>Test Coverage</span>
         </div>
+
         <div>
           <strong>300+</strong>
           <span>LeetCode Problems</span>
         </div>
       </section>
 
-      {/* About */}
+      {/* ABOUT */}
       <section id="about" className="section about">
         <div className="section-label">01 / ABOUT</div>
 
@@ -259,12 +297,15 @@ function App() {
         </div>
       </section>
 
-      {/* Skills */}
+      {/* SKILLS */}
       <section id="skills" className="section skills-section">
         <div className="section-label">02 / TECHNICAL SKILLS</div>
 
         <div className="section-title-row">
-          <h2>My <span>toolbox.</span></h2>
+          <h2>
+            My <span>toolbox.</span>
+          </h2>
+
           <p>
             Technologies and tools I use to design, build, test and deploy
             applications.
@@ -286,7 +327,7 @@ function App() {
         </div>
       </section>
 
-      {/* Experience */}
+      {/* EXPERIENCE */}
       <section id="experience" className="section experience-section">
         <div className="section-label">03 / EXPERIENCE</div>
 
@@ -307,29 +348,36 @@ function App() {
             <span className="date">Jan 2026 – Present</span>
           </div>
 
-          <div className="experience-location">Kharadi, Pune · Agile/Scrum</div>
+          <div className="experience-location">
+            Kharadi, Pune · Agile/Scrum
+          </div>
 
           <ul>
             <li>
               Contributed to a 5-member Agile/Scrum team and delivered 15+
               RESTful web services using Java and Spring Boot.
             </li>
+
             <li>
               Designed scalable Controller–Service–Repository architectures
               processing 1,000+ daily requests.
             </li>
+
             <li>
               Optimized SQL queries and JPA/Hibernate persistence, improving
               data retrieval performance by 25%.
             </li>
+
             <li>
               Implemented JWT authentication and Role-Based Access Control
               using Spring Security.
             </li>
+
             <li>
               Integrated 3+ third-party APIs and reduced manual data
               processing by 30%.
             </li>
+
             <li>
               Created 40+ JUnit 5 and Mockito test cases and achieved 80%+
               unit test coverage.
@@ -337,30 +385,22 @@ function App() {
           </ul>
 
           <div className="tech-list">
-            {[
-              "Java",
-              "Spring Boot",
-              "Spring Security",
-              "JPA",
-              "Hibernate",
-              "MySQL",
-              "JUnit",
-              "Mockito",
-              "Git",
-              "Maven",
-            ].map((tech) => (
+            {experienceTech.map((tech) => (
               <span key={tech}>{tech}</span>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Projects */}
+      {/* PROJECTS */}
       <section id="projects" className="section projects-section">
         <div className="section-label">04 / PROJECTS</div>
 
         <div className="section-title-row">
-          <h2>Things I've <span>built.</span></h2>
+          <h2>
+            Things I've <span>built.</span>
+          </h2>
+
           <p>
             Selected projects demonstrating backend architecture, full-stack
             development and problem solving.
@@ -370,17 +410,22 @@ function App() {
         <div className="projects-grid">
           {projects.map((project, index) => (
             <article className="project-card" key={project.title}>
-              <div className="project-number">0{index + 1}</div>
+              <div className="project-number">
+                {String(index + 1).padStart(2, "0")}
+              </div>
 
               <div className="project-header">
                 <div>
                   <h3>{project.title}</h3>
                   <p>{project.period}</p>
                 </div>
+
                 <span className="arrow">↗</span>
               </div>
 
-              <p className="project-description">{project.description}</p>
+              <p className="project-description">
+                {project.description}
+              </p>
 
               <ul>
                 {project.highlights.map((highlight) => (
@@ -398,14 +443,15 @@ function App() {
         </div>
       </section>
 
-      {/* Coding */}
-      <section className="section coding-section">
+      {/* CODING PROFILES */}
+      <section id="coding" className="section coding-section">
         <div className="section-label">05 / PROBLEM SOLVING</div>
 
         <div className="section-title-row">
           <h2>
             Always <span>learning.</span>
           </h2>
+
           <p>
             Consistent practice in data structures, algorithms and technical
             interview patterns.
@@ -414,41 +460,73 @@ function App() {
 
         <div className="coding-grid">
           {codingProfiles.map((profile) => (
-            <div className="coding-card" key={profile.name}>
-              <span className="coding-name">{profile.name}</span>
+            <a
+              className="coding-card"
+              key={profile.name}
+              href={profile.url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="coding-name">
+                {profile.name} <span className="profile-arrow">↗</span>
+              </span>
+
               <strong>{profile.count}</strong>
+
               <p>{profile.text}</p>
-            </div>
+            </a>
           ))}
         </div>
       </section>
 
-      {/* Education */}
-      <section className="section education-section">
-        <div className="section-label">06 / EDUCATION</div>
+      {/* EDUCATION */}
+      <section id="education" className="section education-section">
+  <div className="section-label">06 / EDUCATION</div>
 
-        <div className="education-card">
-          <div>
-            <p className="education-label">BACHELOR OF TECHNOLOGY</p>
-            <h2>Computer Science & Engineering</h2>
-            <p>Jharkhand University of Technology, Ranchi</p>
-          </div>
+  <div className="education-card">
+    <div>
+      <p className="education-label">BACHELOR OF TECHNOLOGY</p>
 
-          <span>2021 – 2025</span>
-        </div>
+      <h2>Computer Science & Engineering</h2>
 
-        <div className="education-card">
-          <div>
-            <p className="education-label">INTERMIDIATE OF SCIENECE</p>
-            <h2>SCIENCE STUDENT</h2>
-            <p>Jharkhand aCADEMIC CONCIL , Ranchi</p>
-          </div>
+      <p>Ramgovind Institute of Technology, Koderma</p>
 
-          <span>2019 – 2021</span>
-        </div>
-      </section>
+      <p>Jharkhand University of Technology, Ranchi</p>
+    </div>
 
-      {/* Contact */}
+    <span>2021 – 2025</span>
+  </div>
+
+  <div className="education-card">
+    <div>
+      <p className="education-label">INTERMEDIATE OF SCIENCE</p>
+
+      <h2>Science</h2>
+
+      <p>R K KALYAN +2 HIGH SCHOOL PANDU</p>
+
+      <p>Jharkhand Academic Council, Ranchi</p>
+    </div>
+
+    <span>2019 – 2021</span>
+  </div>
+
+  <div className="education-card">
+    <div>
+      <p className="education-label">SECONDARY EDUCATION</p>
+
+      <h2>Class X</h2>
+
+      <p>UPGRADED HIGH SCHOOL RATNAG</p>
+
+      <p>Jharkhand Academic Council, Ranchi</p>
+    </div>
+
+    <span>2019</span>
+  </div>
+</section>
+
+      {/* CONTACT */}
       <section id="contact" className="section contact-section">
         <div className="contact-content">
           <div className="section-label">07 / CONTACT</div>
@@ -476,7 +554,7 @@ function App() {
             <a
               href="https://www.linkedin.com/in/akshayprajapati2552/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               LinkedIn
             </a>
@@ -484,7 +562,7 @@ function App() {
             <a
               href="https://github.com/AkshayKPrajapati"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
               GitHub
             </a>
@@ -492,6 +570,118 @@ function App() {
         </div>
       </section>
 
+          {/* CONTACT */}
+<section id="contact" className="section contact-section">
+  <div className="contact-content">
+    <div className="section-label">08 / DROP MESSAGE</div>
+
+    <div className="contact-heading">
+      <div>
+        <h2>
+          Let's work
+          <br />
+          <span>together.</span>
+        </h2>
+      </div>
+
+      <p>
+        Have a project, opportunity, or idea you'd like to discuss?
+        Fill out the form and I'll get back to you as soon as possible.
+      </p>
+    </div>
+
+    <form className="contact-form">
+      <div className="form-row">
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Your name"
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="your@email.com"
+            required
+          />
+        </div>
+      </div>
+
+      <div className="form-row">
+        <div className="form-group">
+          <label htmlFor="phone">Phone</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="+91 98765 43210"
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="subject">Subject</label>
+          <input
+            id="subject"
+            name="subject"
+            type="text"
+            placeholder="Project / Job opportunity"
+            required
+          />
+        </div>
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="description">Message</label>
+        <textarea
+          id="description"
+          name="description"
+          rows="7"
+          placeholder="Tell me about your project or opportunity..."
+          required
+        />
+      </div>
+
+      <button type="submit" className="contact-submit">
+        Send Message
+        <span>↗</span>
+      </button>
+    </form>
+
+    <div className="contact-bottom">
+      <a href="mailto:akshay.prajapati2552@gmail.com">
+        akshay.prajapati2552@gmail.com
+      </a>
+
+      <div className="contact-socials">
+        <a
+          href="https://www.linkedin.com/in/akshayprajapati2552/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn ↗
+        </a>
+
+        <a
+          href="https://github.com/AkshayKPrajapati"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+      {/* FOOTER */}
       <footer>
         <p>© 2026 Akshay Kumar Prajapati</p>
         <p>Designed & built with React.js</p>
