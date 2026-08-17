@@ -3,10 +3,9 @@ import'./Navbar.css';
 function Navbar() {
   return (
     <div>
-
         <nav className="navbar">
         <a
-          href="#home"
+          href="/"
           className="logo"
           aria-label="Akshay Kumar Prajapati home"
         >
