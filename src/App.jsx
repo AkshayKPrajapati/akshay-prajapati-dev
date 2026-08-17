@@ -15,7 +15,7 @@ const App = () => {
       <Route path="/careers" element={<Careers />} />
       <Route path="*" element={<NotFound/>} />
     </Routes>
-    <Footer/>
+    <Footer branch="v1.0.3"/>
     </>
   );
 };
