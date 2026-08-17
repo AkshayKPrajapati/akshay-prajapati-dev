@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Home.css";
-import './components/Footer.css';
+import "./components/Footer.css";
 import Footer from "./components/Footer";
-import './Index.css';
+import "./Index.css";
 
 const skills = {
   "Programming Languages": ["Java 8", "Java 11", "Java 17"],
@@ -17,7 +17,15 @@ const skills = {
     "Microservices",
   ],
   Frontend: ["React.js", "HTML5", "CSS3", "Tailwind CSS", "JavaScript"],
-  Tools: ["Git", "GitHub", "Maven", "Gradle", "Postman", "IntelliJ IDEA","VS  Code"],
+  Tools: [
+    "Git",
+    "GitHub",
+    "Maven",
+    "Gradle",
+    "Postman",
+    "IntelliJ IDEA",
+    "VS  Code",
+  ],
   Methodologies: ["Agile", "Scrum"],
   "Currently Learning": ["Docker", "Kafka", "Redis", "OpenAI APIs"],
 };
@@ -111,7 +119,7 @@ const experienceTech = [
   "Maven",
 ];
 
-const Home=() =>{
+const Home = () => {
   const [formStatus, setFormStatus] = useState("");
 
   const handleSubmit = (event) => {
@@ -124,26 +132,23 @@ const Home=() =>{
     const phone = formData.get("phone");
     const subject = formData.get("subject");
     const message = formData.get("description");
-
-    const emailBody = `
-Hello Akshay,
-
-Name: ${name}
-Email: ${email}
-Phone: ${phone || "Not provided"}
-
+    const emailBody = `Hello Akshay,
 Message:
 ${message}
-    `.trim();
 
+Best Regards,
+Name: ${name}
+Phone: ${phone || "Not provided"}
+Email: ${email}
+    `.trim();
     const mailtoUrl = `mailto:akshay.prajapati2552@gmail.com?subject=${encodeURIComponent(
-      subject
+      subject,
     )}&body=${encodeURIComponent(emailBody)}`;
 
     window.location.href = mailtoUrl;
 
     setFormStatus(
-      "Your email client should open now. Please send the prepared message."
+      "Your email client should open now. Please send the prepared message.",
     );
 
     event.currentTarget.reset();
@@ -171,8 +176,8 @@ ${message}
           </h1>
 
           <p className="hero-description">
-            I'm <strong id="NameStrong">AKSHAY PRAJAPATI</strong>, a Java Full Stack
-            Developer specializing in Spring Boot, REST APIs, React.js and
+            I'm <strong id="NameStrong">AKSHAY PRAJAPATI</strong>, a Java Full
+            Stack Developer specializing in Spring Boot, REST APIs, React.js and
             database-driven enterprise applications.
           </p>
 
@@ -203,9 +208,7 @@ ${message}
               LinkedIn ↗
             </a>
 
-            <a href="mailto:akshay.prajapati2552@gmail.com">
-              Email ↗
-            </a>
+            <a href="mailto:akshay.prajapati2552@gmail.com">Email ↗</a>
           </div>
         </div>
 
@@ -307,14 +310,14 @@ ${message}
 
           <div className="about-text">
             <p>
-              Experienced Java Full Stack Developer with a strong foundation
-              in Core Java, OOP, Spring Boot, Hibernate, JPA and MySQL.
+              Experienced Java Full Stack Developer with a strong foundation in
+              Core Java, OOP, Spring Boot, Hibernate, JPA and MySQL.
             </p>
 
             <p>
-              I enjoy designing clean backend architectures, developing
-              secure REST APIs and building intuitive full-stack applications
-              that solve real business problems.
+              I enjoy designing clean backend architectures, developing secure
+              REST APIs and building intuitive full-stack applications that
+              solve real business problems.
             </p>
 
             <p>
@@ -378,17 +381,13 @@ ${message}
 
               <h3>Java Backend Developer</h3>
 
-              <p className="company">
-                Greateway Software Pvt. Ltd.
-              </p>
+              <p className="company">Greateway Software Pvt. Ltd.</p>
             </div>
 
             <span className="date">Jan 2026 – Present</span>
           </div>
 
-          <div className="experience-location">
-            Kharadi, Pune · 
-          </div>
+          <div className="experience-location">Kharadi, Pune ·</div>
 
           <ul>
             <li>
@@ -407,18 +406,18 @@ ${message}
             </li>
 
             <li>
-              Implemented JWT authentication and Role-Based Access Control
-              using Spring Security.
+              Implemented JWT authentication and Role-Based Access Control using
+              Spring Security.
             </li>
 
             <li>
-              Integrated 3+ third-party APIs and reduced manual data
-              processing by 30%.
+              Integrated 3+ third-party APIs and reduced manual data processing
+              by 30%.
             </li>
 
             <li>
-              Created 40+ JUnit 5 and Mockito test cases and achieved 80%+
-              unit test coverage.
+              Created 40+ JUnit 5 and Mockito test cases and achieved 80%+ unit
+              test coverage.
             </li>
           </ul>
 
@@ -464,9 +463,7 @@ ${message}
                 <span className="arrow">↗</span>
               </div>
 
-              <p className="project-description">
-                {project.description}
-              </p>
+              <p className="project-description">{project.description}</p>
 
               <ul>
                 {project.highlights.map((highlight) => (
@@ -534,14 +531,10 @@ ${message}
 
         <div className="education-card">
           <div>
-            <p className="education-label">
-              BACHELOR OF TECHNOLOGY
-            </p>
+            <p className="education-label">BACHELOR OF TECHNOLOGY</p>
 
             <h2>Computer Science & Engineering</h2>
-            <p>
-              Jharkhand University of Technology, Ranchi
-            </p>
+            <p>Jharkhand University of Technology, Ranchi</p>
           </div>
 
           <span>2021 – 2025</span>
@@ -566,15 +559,12 @@ ${message}
             </div>
 
             <p>
-              Have a project, opportunity, or idea you'd like to discuss?
-              Fill out the form and I'll get back to you as soon as possible.
+              Have a project, opportunity, or idea you'd like to discuss? Fill
+              out the form and I'll get back to you as soon as possible.
             </p>
           </div>
 
-          <form
-            className="contact-form"
-            onSubmit={handleSubmit}
-          >
+          <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="name">Name</label>
@@ -638,19 +628,12 @@ ${message}
               />
             </div>
 
-            <button
-              type="submit"
-              className="contact-submit"
-            >
+            <button type="submit" className="contact-submit">
               Send Message
               <span>↗</span>
             </button>
 
-            {formStatus && (
-              <p className="form-status">
-                {formStatus}
-              </p>
-            )}
+            {formStatus && <p className="form-status">{formStatus}</p>}
           </form>
 
           <div className="contact-bottom">
@@ -680,6 +663,6 @@ ${message}
       </section>
     </div>
   );
-}
+};
 
 export default Home;
