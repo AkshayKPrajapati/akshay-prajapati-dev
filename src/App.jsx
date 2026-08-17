@@ -3,6 +3,7 @@ import Home from "./Home";
 import Careers from "./Careers";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
       <Route path="/careers" element={<Careers />} />
+      <Route path="*" element={<NotFound/>} />
     </Routes>
     <Footer/>
     </>
