@@ -14,7 +14,7 @@ const skills = {
     "Microservices",
   ],
   Frontend: ["React.js", "HTML5", "CSS3", "Tailwind CSS", "JavaScript"],
-  Tools: ["Git", "GitHub", "Maven", "Gradle", "Postman", "IntelliJ IDEA"],
+  Tools: ["Git", "GitHub", "Maven", "Gradle", "Postman", "IntelliJ IDEA","VS  Code"],
   Methodologies: ["Agile", "Scrum"],
   "Currently Learning": ["Docker", "Kafka", "Redis", "OpenAI APIs"],
 };
@@ -567,49 +567,12 @@ ${message}
             </p>
 
             <h2>Computer Science & Engineering</h2>
-
-            <p>
-              Ramgovind Institute of Technology, Koderma
-            </p>
-
             <p>
               Jharkhand University of Technology, Ranchi
             </p>
           </div>
 
           <span>2021 – 2025</span>
-        </div>
-
-        <div className="education-card">
-          <div>
-            <p className="education-label">
-              INTERMEDIATE OF SCIENCE
-            </p>
-
-            <h2>Science</h2>
-
-            <p>R K KALYAN +2 HIGH SCHOOL PANDU</p>
-
-            <p>Jharkhand Academic Council, Ranchi</p>
-          </div>
-
-          <span>2019 – 2021</span>
-        </div>
-
-        <div className="education-card">
-          <div>
-            <p className="education-label">
-              SECONDARY EDUCATION
-            </p>
-
-            <h2>Class X</h2>
-
-            <p>UPGRADED HIGH SCHOOL RATNAG</p>
-
-            <p>Jharkhand Academic Council, Ranchi</p>
-          </div>
-
-          <span>2019</span>
         </div>
       </section>
 
@@ -744,13 +707,10 @@ ${message}
         </div>
       </section>
 
-      {/* =========================
-          FOOTER
-      ========================= */}
+      {/* FOOTER */}
 
       <footer>
         <p>© 2026 Akshay Kumar Prajapati</p>
-
         <p>Designed & built with React.js</p>
       </footer>
     </div>
