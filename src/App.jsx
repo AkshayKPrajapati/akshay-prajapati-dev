@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "./App.css";
 
 const skills = {
@@ -12,7 +13,7 @@ const skills = {
     "REST APIs",
     "Microservices",
   ],
-  Frontend: ["React.js", "HTML5", "CSS3", "Tailwind CSS","JS"],
+  Frontend: ["React.js", "HTML5", "CSS3", "Tailwind CSS", "JavaScript"],
   Tools: ["Git", "GitHub", "Maven", "Gradle", "Postman", "IntelliJ IDEA"],
   Methodologies: ["Agile", "Scrum"],
   "Currently Learning": ["Docker", "Kafka", "Redis", "OpenAI APIs"],
@@ -108,11 +109,55 @@ const experienceTech = [
 ];
 
 function App() {
+  const [formStatus, setFormStatus] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const phone = formData.get("phone");
+    const subject = formData.get("subject");
+    const message = formData.get("description");
+
+    const emailBody = `
+Hello Akshay,
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone || "Not provided"}
+
+Message:
+${message}
+    `.trim();
+
+    const mailtoUrl = `mailto:akshay.prajapati2552@gmail.com?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(emailBody)}`;
+
+    window.location.href = mailtoUrl;
+
+    setFormStatus(
+      "Your email client should open now. Please send the prepared message."
+    );
+
+    event.currentTarget.reset();
+  };
+
   return (
     <div className="app">
-      {/* NAVIGATION */}
+      {/* =========================
+          NAVIGATION
+      ========================= */}
+
       <nav className="navbar">
-        <a href="#home" className="logo" aria-label="Akshay Kumar Prajapati home">
+        <a
+          href="#home"
+          className="logo"
+          aria-label="Akshay Kumar Prajapati home"
+        >
           AK<span>.</span>
         </a>
 
@@ -121,6 +166,8 @@ function App() {
           <a href="#skills">Skills</a>
           <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
+          <a href="#coding">Coding</a>
+          <a href="#education">Education</a>
           <a href="#contact">Contact</a>
         </div>
 
@@ -132,7 +179,10 @@ function App() {
         </a>
       </nav>
 
-      {/* HERO */}
+      {/* =========================
+          HERO
+      ========================= */}
+
       <section id="home" className="hero section">
         <div className="hero-content">
           <div className="availability">
@@ -149,7 +199,7 @@ function App() {
           </h1>
 
           <p className="hero-description">
-            I'm <strong>Akshay Kumar Prajapati</strong>, a Java Full Stack
+            I'm <strong id="NameStrong">AKSHAY PRAJAPATI</strong>, a Java Full Stack
             Developer specializing in Spring Boot, REST APIs, React.js and
             database-driven enterprise applications.
           </p>
@@ -210,7 +260,7 @@ function App() {
                 <span className="line-number">02</span>
                 &nbsp;&nbsp;
                 <span className="purple">String</span> name ={" "}
-                <span className="green">"Akshay"</span>;
+                <span className="green">"Akshay Kumar Prajapati"</span>;
               </div>
 
               <div>
@@ -243,7 +293,10 @@ function App() {
         </div>
       </section>
 
-      {/* STATS */}
+      {/* =========================
+          STATS
+      ========================= */}
+
       <section className="stats">
         <div>
           <strong>35+</strong>
@@ -266,7 +319,10 @@ function App() {
         </div>
       </section>
 
-      {/* ABOUT */}
+      {/* =========================
+          ABOUT
+      ========================= */}
+
       <section id="about" className="section about">
         <div className="section-label">01 / ABOUT</div>
 
@@ -297,7 +353,10 @@ function App() {
         </div>
       </section>
 
-      {/* SKILLS */}
+      {/* =========================
+          SKILLS
+      ========================= */}
+
       <section id="skills" className="section skills-section">
         <div className="section-label">02 / TECHNICAL SKILLS</div>
 
@@ -327,7 +386,10 @@ function App() {
         </div>
       </section>
 
-      {/* EXPERIENCE */}
+      {/* =========================
+          EXPERIENCE
+      ========================= */}
+
       <section id="experience" className="section experience-section">
         <div className="section-label">03 / EXPERIENCE</div>
 
@@ -341,8 +403,12 @@ function App() {
           <div className="experience-top">
             <div>
               <p className="experience-type">INTERNSHIP</p>
+
               <h3>Java Backend Developer</h3>
-              <p className="company">Greateway Software Pvt. Ltd.</p>
+
+              <p className="company">
+                Greateway Software Pvt. Ltd.
+              </p>
             </div>
 
             <span className="date">Jan 2026 – Present</span>
@@ -392,9 +458,12 @@ function App() {
         </div>
       </section>
 
-      {/* PROJECTS */}
+      {/* =========================
+          PROJECTS
+      ========================= */}
+
       <section id="projects" className="section projects-section">
-        <div className="section-label">04 / PROJECTS</div>
+        <div className="section-label">04 / PROJECTS & OPEN SOURCE</div>
 
         <div className="section-title-row">
           <h2>
@@ -443,7 +512,10 @@ function App() {
         </div>
       </section>
 
-      {/* CODING PROFILES */}
+      {/* =========================
+          CODING PROFILES
+      ========================= */}
+
       <section id="coding" className="section coding-section">
         <div className="section-label">05 / PROBLEM SOLVING</div>
 
@@ -468,7 +540,9 @@ function App() {
               rel="noopener noreferrer"
             >
               <span className="coding-name">
-                {profile.name} <span className="profile-arrow">↗</span>
+                {profile.name}
+
+                <span className="profile-arrow">↗</span>
               </span>
 
               <strong>{profile.count}</strong>
@@ -479,211 +553,204 @@ function App() {
         </div>
       </section>
 
-      {/* EDUCATION */}
+      {/* =========================
+          EDUCATION
+      ========================= */}
+
       <section id="education" className="section education-section">
-  <div className="section-label">06 / EDUCATION</div>
+        <div className="section-label">06 / EDUCATION</div>
 
-  <div className="education-card">
-    <div>
-      <p className="education-label">BACHELOR OF TECHNOLOGY</p>
+        <div className="education-card">
+          <div>
+            <p className="education-label">
+              BACHELOR OF TECHNOLOGY
+            </p>
 
-      <h2>Computer Science & Engineering</h2>
+            <h2>Computer Science & Engineering</h2>
 
-      <p>Ramgovind Institute of Technology, Koderma</p>
+            <p>
+              Ramgovind Institute of Technology, Koderma
+            </p>
 
-      <p>Jharkhand University of Technology, Ranchi</p>
-    </div>
+            <p>
+              Jharkhand University of Technology, Ranchi
+            </p>
+          </div>
 
-    <span>2021 – 2025</span>
-  </div>
+          <span>2021 – 2025</span>
+        </div>
 
-  <div className="education-card">
-    <div>
-      <p className="education-label">INTERMEDIATE OF SCIENCE</p>
+        <div className="education-card">
+          <div>
+            <p className="education-label">
+              INTERMEDIATE OF SCIENCE
+            </p>
 
-      <h2>Science</h2>
+            <h2>Science</h2>
 
-      <p>R K KALYAN +2 HIGH SCHOOL PANDU</p>
+            <p>R K KALYAN +2 HIGH SCHOOL PANDU</p>
 
-      <p>Jharkhand Academic Council, Ranchi</p>
-    </div>
+            <p>Jharkhand Academic Council, Ranchi</p>
+          </div>
 
-    <span>2019 – 2021</span>
-  </div>
+          <span>2019 – 2021</span>
+        </div>
 
-  <div className="education-card">
-    <div>
-      <p className="education-label">SECONDARY EDUCATION</p>
+        <div className="education-card">
+          <div>
+            <p className="education-label">
+              SECONDARY EDUCATION
+            </p>
 
-      <h2>Class X</h2>
+            <h2>Class X</h2>
 
-      <p>UPGRADED HIGH SCHOOL RATNAG</p>
+            <p>UPGRADED HIGH SCHOOL RATNAG</p>
 
-      <p>Jharkhand Academic Council, Ranchi</p>
-    </div>
+            <p>Jharkhand Academic Council, Ranchi</p>
+          </div>
 
-    <span>2019</span>
-  </div>
-</section>
+          <span>2019</span>
+        </div>
+      </section>
 
-      {/* CONTACT */}
+      {/* =========================
+          CONTACT
+      ========================= */}
+
       <section id="contact" className="section contact-section">
         <div className="contact-content">
           <div className="section-label">07 / CONTACT</div>
 
-          <h2>
-            Let's build something
-            <br />
-            <span>great together.</span>
-          </h2>
+          <div className="contact-heading">
+            <div>
+              <h2>
+                Let's work
+                <br />
+                <span>together.</span>
+              </h2>
+            </div>
 
-          <p>
-            Whether you're looking for a Java developer, have a project idea,
-            or simply want to connect, I'd love to hear from you.
-          </p>
+            <p>
+              Have a project, opportunity, or idea you'd like to discuss?
+              Fill out the form and I'll get back to you as soon as possible.
+            </p>
+          </div>
 
-          <a
-            href="mailto:akshay.prajapati2552@gmail.com"
-            className="contact-email"
+          <form
+            className="contact-form"
+            onSubmit={handleSubmit}
           >
-            akshay.prajapati2552@gmail.com
-            <span>↗</span>
-          </a>
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="name">Name</label>
 
-          <div className="contact-socials">
-            <a
-              href="https://www.linkedin.com/in/akshayprajapati2552/"
-              target="_blank"
-              rel="noopener noreferrer"
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="email">Email</label>
+
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="form-row">
+              <div className="form-group">
+                <label htmlFor="phone">Phone</label>
+
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="+91 98765 43210"
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="subject">Subject</label>
+
+                <input
+                  id="subject"
+                  name="subject"
+                  type="text"
+                  placeholder="Project / Job opportunity"
+                  required
+                />
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="description">Message</label>
+
+              <textarea
+                id="description"
+                name="description"
+                rows="7"
+                placeholder="Tell me about your project or opportunity..."
+                required
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="contact-submit"
             >
-              LinkedIn
+              Send Message
+              <span>↗</span>
+            </button>
+
+            {formStatus && (
+              <p className="form-status">
+                {formStatus}
+              </p>
+            )}
+          </form>
+
+          <div className="contact-bottom">
+            <a href="mailto:akshay.prajapati2552@gmail.com">
+              akshay.prajapati2552@gmail.com
             </a>
 
-            <a
-              href="https://github.com/AkshayKPrajapati"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
+            <div className="contact-socials">
+              <a
+                href="https://www.linkedin.com/in/akshayprajapati2552/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn ↗
+              </a>
+
+              <a
+                href="https://github.com/AkshayKPrajapati"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub ↗
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-          {/* CONTACT */}
-<section id="contact" className="section contact-section">
-  <div className="contact-content">
-    <div className="section-label">08 / DROP MESSAGE</div>
+      {/* =========================
+          FOOTER
+      ========================= */}
 
-    <div className="contact-heading">
-      <div>
-        <h2>
-          Let's work
-          <br />
-          <span>together.</span>
-        </h2>
-      </div>
-
-      <p>
-        Have a project, opportunity, or idea you'd like to discuss?
-        Fill out the form and I'll get back to you as soon as possible.
-      </p>
-    </div>
-
-    <form className="contact-form">
-      <div className="form-row">
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            placeholder="Your name"
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            placeholder="your@email.com"
-            required
-          />
-        </div>
-      </div>
-
-      <div className="form-row">
-        <div className="form-group">
-          <label htmlFor="phone">Phone</label>
-          <input
-            id="phone"
-            name="phone"
-            type="tel"
-            placeholder="+91 98765 43210"
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="subject">Subject</label>
-          <input
-            id="subject"
-            name="subject"
-            type="text"
-            placeholder="Project / Job opportunity"
-            required
-          />
-        </div>
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="description">Message</label>
-        <textarea
-          id="description"
-          name="description"
-          rows="7"
-          placeholder="Tell me about your project or opportunity..."
-          required
-        />
-      </div>
-
-      <button type="submit" className="contact-submit">
-        Send Message
-        <span>↗</span>
-      </button>
-    </form>
-
-    <div className="contact-bottom">
-      <a href="mailto:akshay.prajapati2552@gmail.com">
-        akshay.prajapati2552@gmail.com
-      </a>
-
-      <div className="contact-socials">
-        <a
-          href="https://www.linkedin.com/in/akshayprajapati2552/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          LinkedIn ↗
-        </a>
-
-        <a
-          href="https://github.com/AkshayKPrajapati"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub ↗
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-      {/* FOOTER */}
       <footer>
         <p>© 2026 Akshay Kumar Prajapati</p>
+
         <p>Designed & built with React.js</p>
       </footer>
     </div>
