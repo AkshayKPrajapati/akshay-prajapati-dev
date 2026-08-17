@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap");
+footer {
+  max-width: 1180px;
+
+  margin: auto;
+
+  padding: 30px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-top: 1px solid var(--border);
+
+  color: #50545d;
+
+  font-family: "DM Mono", monospace;
+
+  font-size: 10px;
+}
+@media (max-width: 650px) {
+  footer {
+    display: block;
+
+    line-height: 2;
+
+    padding: 25px 20px;
+  }
+}
