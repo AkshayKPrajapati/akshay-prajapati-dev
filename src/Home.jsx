@@ -387,7 +387,7 @@ ${message}
           </div>
 
           <div className="experience-location">
-            Kharadi, Pune · Agile/Scrum
+            Kharadi, Pune · 
           </div>
 
           <ul>
