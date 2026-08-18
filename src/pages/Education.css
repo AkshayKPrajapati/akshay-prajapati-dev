@@ -1,0 +1,67 @@
+.education-card {
+  margin-top: 50px;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.education-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.education-label {
+  color: var(--accent);
+  font-family: "DM Mono", monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.education-card h2 {
+  font-size: 27px;
+  letter-spacing: -1px;
+}
+
+.education-card p:not(.education-label) {
+  color: var(--muted);
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.education-card > span {
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .education-card {
+    display: block;
+    padding: 25px;
+  }
+
+  .education-card h2 {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .education-card p {
+    color: var(--muted);
+    letter-spacing: -1px;
+  }
+
+  .education-card > span {
+    display: block;
+    margin-top: 20px;
+  }
+}
