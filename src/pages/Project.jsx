@@ -49,6 +49,28 @@ const projects = [
     ],
     projectLink: "https://gssoc.girlscript.org/",
   },
+  {
+    title: "Nexora Technologies",
+    period: "",
+    description:
+      "A responsive React.js technology company website showcasing Nexora Technologies' software development services, selected projects, company information, development process, client testimonials, and project contact information.",
+    tech: ["React.js", "JavaScript", "HTML5", "CSS3"],
+    highlights: [
+      "Built a complete multi-section technology company website using React.js.",
+      "Implemented responsive sections for Services, Work, Company, Process, Testimonials, and Contact.",
+      "Created reusable data-driven components using JavaScript arrays and React map().",
+      "Developed an interactive-style analytics dashboard hero section using CSS.",
+      "Showcased 3 featured projects: Finora, MediConnect, and UrbanCart.",
+      "Added responsive service cards with technology tags and descriptions.",
+      "Implemented project showcase cards with category, description, and business results.",
+      "Added client testimonials with user initials and company roles.",
+      "Implemented smooth section navigation using anchor links.",
+      "Added a project contact CTA using a mailto link.",
+      "Created visual UI elements including charts, floating cards, grids, gradients, and animated-style indicators using CSS.",
+      "Showcased business metrics including 150+ projects, 32 countries served, and 98% client satisfaction.",
+    ],
+    projectLink: "https://nexora-rouge-seven.vercel.app/",
+  },
 ];
 function Project() {
   return (
