@@ -71,6 +71,27 @@ const projects = [
     ],
     projectLink: "https://nexora-rouge-seven.vercel.app/",
   },
+  {
+  "title": "Dobaara",
+  "period": "August 2026 - Present ",
+  "description": "Buy and sell used products through a simple second-hand marketplace platform.",
+  "tech": [
+    "Java",
+    "Spring Boot",
+    "REST API",
+    "React",
+    "MySQL"
+  ],
+  "highlights": [
+    "Developed a marketplace for buying and selling used products.",
+    "Built RESTful APIs using Spring Boot.",
+    "Developed the frontend using React.",
+    "Implemented product listing and browsing functionality.",
+    "Designed the platform to make selling unused products simple and accessible."
+  ],
+  "projectLink": "https://dobaaraitem.netlify.app/"
+},
+
 ];
 function Project() {
   return (
